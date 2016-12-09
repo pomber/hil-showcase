@@ -2,10 +2,12 @@
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="hil-list-item.html">
 
 <dom-module id="hil-showcase">
@@ -46,11 +48,20 @@
       </app-header>
 
 
+      <app-location path="{{route}}" use-hash-as-path></app-location>
+      <!--<pre>[[route]]</pre>      -->
+
+      <iron-pages selected="[[route]]" attr-for-selected="name">
+        <div name="paper planes">Planes</div>
+        <div name="rotation">Rotation</div>
+        <div name="">Three</div>
+      </iron-pages>
+
       <div class="layout horizontal center-center wrap">
         <template is="dom-repeat" items="[[exps]]">
           <hil-list-item exp="[[item]]"></hil-list-item>
         </template>
-        </ul>
+      </div>
 
     </app-header-layout>
   </template>
@@ -67,6 +78,7 @@
             return this.data;
           },
         },
+        route: String
       },
 
       data: [
