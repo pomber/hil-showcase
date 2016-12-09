@@ -1,0 +1,97 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="hil-list-item.html">
+
+<dom-module id="hil-showcase">
+  <template>
+
+    <style include="iron-flex iron-flex-alignment">
+      
+      app-header {
+        color: #fff;
+        background-color: #333;        
+        @apply(--paper-font-title);
+      }
+
+     hil-list-item {
+       width: 25%;
+       padding: 8px;
+       min-width: 300px;
+       max-width: 400px;
+     }
+
+    </style>
+
+    <app-header-layout fullbleed>
+      <app-header condenses>
+        <app-toolbar>
+          <!--<img src="http://www.hexacta.com/wp-content/uploads/2015/06/hexacta.png"></img>-->
+          <div main-title>Hx Experiments</div>
+        </app-toolbar>
+      </app-header>
+        
+        
+      <div class="layout horizontal center-center wrap">
+        <template is="dom-repeat" items="[[exps]]">
+          <hil-list-item exp="[[item]]"></hil-list-item>
+        </template>
+      </ul>
+
+    </app-header-layout>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'hil-showcase',
+
+      properties: {
+        exps: {
+          type: Array,
+          value: function () {
+            return this.data;
+          },
+        },
+      },
+
+      data: [
+        { 
+          name: "Paper Planes",
+          description: "Progressive web app using web components", 
+          tags: ["Polymer", "PWA", "Firebase"],
+          image: "https://assets.materialup.com/uploads/555d1057-7aee-45e2-a660-eee4f77348fe/animated_teaser.gif"
+        }, { 
+          name: "Periodic Table",
+          description: "Hybrid app with cool visual material transitions", 
+          tags: ["React Native", "Mobile"],
+          image: "https://assets.materialup.com/uploads/4b861b9f-53b8-4fcd-b6bb-6540b6e0ce14/animated_teaser.gif"
+        }, { 
+          name: "Rotation",
+          description: "Lorem ipsum sarasa", 
+          tags: ["iOS", "Mobile App"],
+          image: "https://assets.materialup.com/uploads/86f78411-0b2a-4881-9466-b087ddc05a09/animated_teaser.gif"
+        }, { 
+          name: "Music",
+          description: "Lorem ipsum sarasa", 
+          tags: ["Xamarin", "Mobile"],
+          image: "https://assets.materialup.com/uploads/01ecbe6b-8abe-4adf-ae06-9a742a9a205e/animated_teaser.gif"
+        }, { 
+          name: "Payment",
+          description: "Lorem ipsum sarasa", 
+          tags: ["React", "Web"],
+          image: "https://assets.materialup.com/uploads/e6a9541c-3ecd-4239-996f-11033f738faf/animated_teaser.gif"
+        }, { 
+          name: "Sky",
+          description: "Lorem ipsum sarasa", 
+          tags: ["Android", "Mobile App"],
+          image: "https://assets.materialup.com/uploads/a882f75d-3217-4acf-b7df-2cc7bcfde8fa/animated_teaser.gif"
+        },
+      ],
+
+    });
+  </script>
+</dom-module>
