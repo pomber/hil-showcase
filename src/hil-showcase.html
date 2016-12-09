@@ -4,42 +4,53 @@
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="hil-list-item.html">
 
 <dom-module id="hil-showcase">
   <template>
 
     <style include="iron-flex iron-flex-alignment">
-      
       app-header {
         color: #fff;
-        background-color: #333;        
+        background-color: #333;
         @apply(--paper-font-title);
+        text-align: center;
       }
-
-     hil-list-item {
-       width: 25%;
-       padding: 8px;
-       min-width: 300px;
-       max-width: 400px;
-     }
-
+      
+      paper-tabs {
+        --paper-tabs-selection-bar-color: #0aac8e;
+      }
+      
+      hil-list-item {
+        width: 25%;
+        padding: 8px;
+        min-width: 300px;
+        max-width: 400px;
+      }
     </style>
 
     <app-header-layout fullbleed>
-      <app-header condenses>
-        <app-toolbar>
-          <!--<img src="http://www.hexacta.com/wp-content/uploads/2015/06/hexacta.png"></img>-->
-          <div main-title>Hx Experiments</div>
+      <app-header effects="waterfall" reveals condense>
+        <app-toolbar sticky>
+          <a href="http://www.hexacta.com">
+            <img src="http://www.hexacta.com/wp-content/uploads/2015/06/hexacta.png"></img>
+          </a>
+          <div main-title>Innovation Lab</div>
+          <paper-tabs selected="0">
+            <paper-tab>Experiments</paper-tab>
+            <paper-tab>About</paper-tab>
+          </paper-tabs>
         </app-toolbar>
       </app-header>
-        
-        
+
+
       <div class="layout horizontal center-center wrap">
         <template is="dom-repeat" items="[[exps]]">
           <hil-list-item exp="[[item]]"></hil-list-item>
         </template>
-      </ul>
+        </ul>
 
     </app-header-layout>
   </template>
