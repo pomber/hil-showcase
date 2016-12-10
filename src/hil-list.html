@@ -39,8 +39,8 @@
 
       goToExperiment: function(e) {
         var name = e.model.item.name;
+        this.fire('select-experiment', name);
         console.log(name);
-        //TODO change location
       },
 
       data: [

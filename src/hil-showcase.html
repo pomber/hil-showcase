@@ -45,7 +45,7 @@
       <!--<pre>[[route]]</pre>      -->
 
       <iron-pages selected="[[route]]" attr-for-selected="name">
-        <div name=""><hil-list></hil-list></div>
+        <div name="" on-select-experiment="_onSelectExperiment"><hil-list></hil-list></div>
         <div name="paper planes">Planes</div>
         <div name="rotation">Rotation</div>
       </iron-pages>
@@ -61,6 +61,11 @@
       properties: {
         route: String
       },
+
+      _onSelectExperiment: function(e) {
+        var name = e.detail;
+        this.route = name.toLowerCase();
+      }
 
     });
   </script>
