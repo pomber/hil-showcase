@@ -25,15 +25,20 @@
       paper-tabs {
         --paper-tabs-selection-bar-color: #0aac8e;
       }
+
+      div[main-title] {
+        cursor: pointer;
+        pointer-events: auto;
+      }
     </style>
 
     <app-header-layout fullbleed>
-      <app-header effects="waterfall" reveals condense>
-        <app-toolbar sticky>
+      <app-header effects="waterfall" reveals>
+        <app-toolbar>
           <a href="http://www.hexacta.com">
             <img src="http://www.hexacta.com/wp-content/uploads/2015/06/hexacta.png"></img>
           </a>
-          <div main-title>Innovation Lab</div>
+          <div main-title on-tap="goHome">Innovation Lab</div>
           <paper-tabs selected="0">
             <paper-tab>Experiments</paper-tab>
             <paper-tab>About</paper-tab>
@@ -82,6 +87,10 @@
       _onSelectExperiment: function(e) {
         var name = e.detail;
         this.route = name.toLowerCase();
+      },
+
+      goHome: function(e) {
+        this.route = "";
       },
 
       getData: function() {
