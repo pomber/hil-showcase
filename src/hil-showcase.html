@@ -9,6 +9,7 @@
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="hil-list.html">
+<link rel="import" href="hil-exp.html">
 
 <dom-module id="hil-showcase">
   <template>
@@ -45,12 +46,19 @@
       <!--<pre>[[route]]</pre>      -->
 
       <iron-pages selected="[[route]]" attr-for-selected="name">
-        <div name="">
-          <hil-list exps="[[data]]" on-select-experiment="_onSelectExperiment">
-          </hil-list>
-        </div>
-        <div name="paper planes">Planes</div>
-        <div name="rotation">Rotation</div>
+        <hil-list name="" exps="[[data]]" on-select-experiment="_onSelectExperiment"></hil-list>
+        <!--https://github.com/PolymerElements/iron-selector/issues/42
+        <template is="dom-repeat" list="[[data]]">
+          <div name="[[item.name]]">
+            <hil-exp exp="[[item]]"></hil-exp>
+          </div>
+        </template>-->
+        <hil-exp name="paper planes" exp="[[data.0]]"></hil-exp>
+        <hil-exp name="periodic table" exp="[[data.1]]"></hil-exp>
+        <hil-exp name="rotation" exp="[[data.2]]"></hil-exp>
+        <hil-exp name="music" exp="[[data.3]]"></hil-exp>
+        <hil-exp name="payment" exp="[[data.4]]"></hil-exp>
+        <hil-exp name="sky" exp="[[data.5]]"></hil-exp>
       </iron-pages>
 
     </app-header-layout>
@@ -73,7 +81,7 @@
 
       _onSelectExperiment: function(e) {
         var name = e.detail;
-        this.route = name.toLowerCase;
+        this.route = name.toLowerCase();
       },
 
       getData: function() {
