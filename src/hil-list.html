@@ -17,7 +17,7 @@
 
     <div class="layout horizontal center-center wrap">
       <template is="dom-repeat" items="[[exps]]">
-        <hil-list-item exp="[[item]]"></hil-list-item>
+        <hil-list-item exp="[[item]]" on-tap="goToExperiment"></hil-list-item>
       </template>
     </div>
 
@@ -35,6 +35,12 @@
             return this.data;
           },
         },
+      },
+
+      goToExperiment: function(e) {
+        var name = e.model.item.name;
+        console.log(name);
+        //TODO change location
       },
 
       data: [
