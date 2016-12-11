@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
 
 <dom-module id="hil-exp">
   <template>
@@ -6,10 +7,15 @@
       :host {
         display: block;
       }
+      paper-material {
+        background: white;
+      }
     </style>
-
-    <h1>[[exp.name]]</h1>
-    exp
+    
+    <paper-material elevation="1">    
+      <h1>[[exp.name]]</h1>
+      <p>[[exp.description]]</p>
+    </paper-material>
     
   </template>
   <script>

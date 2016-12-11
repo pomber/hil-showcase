@@ -7,7 +7,7 @@
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
 <link rel="import" href="hil-list.html">
 <link rel="import" href="hil-exp.html">
 
@@ -50,7 +50,7 @@
       <app-location path="{{route}}" use-hash-as-path></app-location>
       <!--<pre>[[route]]</pre>      -->
 
-      <iron-pages selected="[[route]]" attr-for-selected="name">
+      <neon-animated-pages selected="[[route]]" attr-for-selected="name">
         <hil-list name="" exps="[[data]]" on-select-experiment="_onSelectExperiment"></hil-list>
         <!--https://github.com/PolymerElements/iron-selector/issues/42
         <template is="dom-repeat" list="[[data]]">
@@ -66,7 +66,7 @@
         <hil-exp name="sky" exp="[[data.5]]"></hil-exp>
       </iron-pages>
 
-    </app-header-layout>
+    </neon-animated-pages>
   </template>
 
   <script>
