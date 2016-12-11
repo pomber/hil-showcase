@@ -1,23 +1,33 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 <link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 
 <dom-module id="hil-exp">
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
-      }
-      paper-material {
-        background: white;
+        color: white;
+        max-width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
       }
     </style>
+
+    <div class="layout horizontal">
+      <div class="flex">
+        <h1>[[exp.name]]</h1>
+        <p>[[exp.description]]</p>
+      </div>
+      <div class="layout vertical">
+        <paper-button raised>Launch</paper-button>
+        <paper-button raised>Code</paper-button>
+      </div>
+    </div>
     
-    <paper-material elevation="1">    
-      <h1>[[exp.name]]</h1>
-      <p>[[exp.description]]</p>
-    </paper-material>
     
   </template>
   <script>
@@ -36,7 +46,6 @@
           value:  function() {
             return {
               'entry': {
-                // provided by neon-animation/animations/scale-up-animation.html
                 name: 'scale-up-animation',
                 node: this
               }
