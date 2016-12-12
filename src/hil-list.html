@@ -19,11 +19,9 @@
       }
     </style>
 
-    <h1 id="hero">Title</h1>
-
     <div class="layout horizontal center-center wrap">
       <template is="dom-repeat" items="[[exps]]">
-        <hil-list-item exp="[[item]]" on-tap="goToExperiment"></hil-list-item>
+        <hil-list-item id="[[item.id]]" exp="[[item]]" on-tap="goToExperiment"></hil-list-item>
       </template>
     </div>
 
@@ -62,17 +60,14 @@
             }
           }
         },
-        sharedElements: {
-          value: function() {
-            return {
-              'hero': this.$.hero
-            }
-          }
-        }
+        sharedElements: Object
       },
 
       goToExperiment: function(e) {
-        var name = e.model.item.name;
+        var name = e.model.item.name;        
+        var id = e.model.item.id;
+        var listitem = this.$$('#' + id);
+        this.sharedElements['hero'] = listitem.$.hero;
         this.fire('select-experiment', name);
         console.log(name);
       },
