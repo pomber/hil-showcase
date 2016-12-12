@@ -6,7 +6,8 @@
 <link rel="import" href="../bower_components/neon-animation/animations/fade-in-animation.html">
 <link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
 
 <dom-module id="hil-exp">
   <template>
@@ -43,6 +44,10 @@
         margin-top: 12px;
         position: relative;
       }
+
+      p {
+        apply(--paper-font-body1);
+      }
     </style>
 
     <div class="layout horizontal">
@@ -59,6 +64,10 @@
     <div class="video">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/LKrj-UYIzyY" frameborder="0"></iframe>
     </div>    
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate sapien lacus, a sollicitudin ipsum gravida sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce sit amet velit placerat, euismod metus vel, tincidunt arcu. Pellentesque non ullamcorper lectus, sed rhoncus orci. Nunc tristique elit et posuere venenatis. In sit amet odio vel arcu lobortis vestibulum. Nunc euismod condimentum orci, sed feugiat ligula volutpat eu. Vestibulum ultricies arcu in felis lacinia vulputate. Mauris faucibus in dolor eget convallis.</p>
+    <p>Sed ex ante, mollis a fringilla ac, faucibus id erat. Aliquam sed odio nibh. Sed quis vulputate tellus, a pretium metus. Curabitur volutpat commodo pharetra. Proin et dapibus nisi. Integer tincidunt tincidunt rutrum. Quisque convallis sem nec tellus lobortis interdum. Duis sit amet ullamcorper arcu, vitae vestibulum lorem. Aenean eu elementum ligula. Sed hendrerit, mi ac fringilla efficitur, purus velit aliquet ligula, ut dignissim justo dui nec velit. Proin a accumsan felis, vel hendrerit elit. Aenean non est scelerisque, vestibulum felis eu, ullamcorper sapien. Proin eu turpis in orci placerat aliquet eget ut diam. Nam eu tempor sem. Vestibulum dignissim mauris leo, a auctor sem tempor quis.</p>
+    <p>Sed maximus diam ut ultricies ultrices. Sed id pulvinar quam, nec condimentum purus. Mauris iaculis enim ac dolor tempor congue. Suspendisse ac nisl a purus tincidunt suscipit nec quis leo. Sed nibh libero, pharetra nec lorem interdum, vehicula scelerisque libero. Curabitur ultrices leo at mauris auctor, quis feugiat nibh dictum. Vivamus non diam eget tortor aliquet cursus a sit amet tellus. Nunc pulvinar metus ac eleifend finibus. Mauris tristique purus sed sagittis tincidunt. Phasellus eros lacus, accumsan sed ligula non, vehicula accumsan felis. Nam id leo eu massa imperdiet finibus. Quisque a metus quis massa gravida ornare.</p>
     
   </template>
   <script>
